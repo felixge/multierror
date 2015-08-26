@@ -29,5 +29,8 @@ func Append(err error, errs ...error) error {
 			multiErr = append(multiErr, err)
 		}
 	}
+	if len(multiErr) == 0 {
+		return nil
+	}
 	return multiErr
 }
